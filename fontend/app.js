@@ -37,3 +37,6 @@ async function doSearch() {
             ? `<button class="small secondary" disabled>Subscribed ✓</button>`
             : `<button class="small" onclick="subscribe('${esc(u.username)}')">Subscribe</button>`
         }
+      </div>`
+      )
+      .join("");
