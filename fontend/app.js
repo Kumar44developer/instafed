@@ -40,3 +40,6 @@ async function doSearch() {
       </div>`
       )
       .join("");
+  } catch (e) {
+    $("searchStatus").textContent = e.message;
+    $("searchStatus").classList.add("error");
