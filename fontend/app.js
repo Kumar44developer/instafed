@@ -15,3 +15,6 @@ const fmt = (n) =>
 async function doSearch() {
   const q = $("searchInput").value.trim();
   if (!q) return;
+  $("searchBtn").disabled = true;
+  $("searchStatus").textContent = "Searching…";
+  $("searchStatus").classList.remove("error");
