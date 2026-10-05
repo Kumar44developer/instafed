@@ -49,3 +49,7 @@ async function doSearch() {
 }
 async function subscribe(username) {
   try {
+    await api("/api/subscribe", {
+      method: "POST",
+      body: JSON.stringify({ username }),
+    });
