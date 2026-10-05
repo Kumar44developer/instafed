@@ -27,3 +27,5 @@ async function doSearch() {
       <div class="user-row">
         <img src="${esc(u.profile_pic)}" alt="" referrerpolicy="no-referrer"
              onerror="this.style.visibility='hidden'"/>
+        <div class="meta">
+          <div class="uname">@${esc(u.username)} ${u.is_verified ? "✔️" : ""}</div>
