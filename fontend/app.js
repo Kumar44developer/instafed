@@ -18,3 +18,6 @@ async function doSearch() {
   $("searchBtn").disabled = true;
   $("searchStatus").textContent = "Searching…";
   $("searchStatus").classList.remove("error");
+  try {
+    const data = await api(`/api/search?q=${encodeURIComponent(q)}`);
+    $("searchStatus").textContent = `${data.count} result(s)`;
