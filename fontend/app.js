@@ -53,3 +53,5 @@ async function subscribe(username) {
       method: "POST",
       body: JSON.stringify({ username }),
     });
+    await loadSubscriptions();
+    doSearch();
