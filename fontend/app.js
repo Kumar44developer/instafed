@@ -43,3 +43,7 @@ async function doSearch() {
   } catch (e) {
     $("searchStatus").textContent = e.message;
     $("searchStatus").classList.add("error");
+  } finally {
+    $("searchBtn").disabled = false;
+  }
+}
