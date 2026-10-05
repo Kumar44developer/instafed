@@ -21,3 +21,6 @@ async function doSearch() {
   try {
     const data = await api(`/api/search?q=${encodeURIComponent(q)}`);
     $("searchStatus").textContent = `${data.count} result(s)`;
+    $("searchResults").innerHTML = data.results
+      .map(
+        (u) => `
