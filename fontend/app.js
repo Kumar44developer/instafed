@@ -47,3 +47,5 @@ async function doSearch() {
     $("searchBtn").disabled = false;
   }
 }
+async function subscribe(username) {
+  try {
