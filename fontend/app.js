@@ -32,3 +32,8 @@ async function doSearch() {
           <div class="fname">${esc(u.full_name)} · ${fmt(u.followers)} followers
             ${u.is_private ? "· 🔒 private" : ""}</div>
         </div>
+        ${
+          u.subscribed
+            ? `<button class="small secondary" disabled>Subscribed ✓</button>`
+            : `<button class="small" onclick="subscribe('${esc(u.username)}')">Subscribe</button>`
+        }
