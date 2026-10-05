@@ -24,3 +24,6 @@ async function doSearch() {
     $("searchResults").innerHTML = data.results
       .map(
         (u) => `
+      <div class="user-row">
+        <img src="${esc(u.profile_pic)}" alt="" referrerpolicy="no-referrer"
+             onerror="this.style.visibility='hidden'"/>
