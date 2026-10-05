@@ -29,3 +29,6 @@ async function doSearch() {
              onerror="this.style.visibility='hidden'"/>
         <div class="meta">
           <div class="uname">@${esc(u.username)} ${u.is_verified ? "✔️" : ""}</div>
+          <div class="fname">${esc(u.full_name)} · ${fmt(u.followers)} followers
+            ${u.is_private ? "· 🔒 private" : ""}</div>
+        </div>
