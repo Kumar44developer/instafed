@@ -11,3 +11,7 @@ const api = async (path, opts = {}) => {
 };
 const fmt = (n) =>
   n >= 1e6 ? (n / 1e6).toFixed(1) + "M" : n >= 1e3 ? (n / 1e3).toFixed(1) + "K" : String(n ?? 0);
+
+async function doSearch() {
+  const q = $("searchInput").value.trim();
+  if (!q) return;
