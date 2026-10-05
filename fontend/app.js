@@ -9,3 +9,5 @@ const api = async (path, opts = {}) => {
   if (!res.ok) throw new Error(body.detail || `HTTP ${res.status}`);
   return body;
 };
+const fmt = (n) =>
+  n >= 1e6 ? (n / 1e6).toFixed(1) + "M" : n >= 1e3 ? (n / 1e3).toFixed(1) + "K" : String(n ?? 0);
