@@ -65,3 +65,7 @@ async function unsubscribe(username) {
   await loadSubscriptions();
   loadFeed(false);
 }
+
+async function loadSubscriptions() {
+  const { subscriptions } = await api("/api/subscriptions");
+  $("subsList").innerHTML = subscriptions.length
