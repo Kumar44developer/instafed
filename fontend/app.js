@@ -90,4 +90,7 @@ async function loadSubscriptions() {
 async function loadUserVideos(username) {
   $("feedStatus").textContent = `Fetching every video of @${username}… (large profiles can take a while)`;
   $("feedStatus").classList.remove("error");
-
+  try {
+    const data = await api(
+      `/api/subscriptions/${encodeURIComponent(username)}/videos`
+    );
