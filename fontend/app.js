@@ -97,3 +97,8 @@ async function loadUserVideos(username) {
     $("feedStatus").textContent = `${data.count} videos from @${username} (${data.source})`;
     renderFeed(data.videos);
     loadSubscriptions();
+  } catch (e) {
+    $("feedStatus").textContent = e.message;
+    $("feedStatus").classList.add("error");
+  }
+}
