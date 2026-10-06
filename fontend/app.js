@@ -59,3 +59,9 @@ async function subscribe(username) {
       alert("Subscribe failed: " + e.message);
     }
   }
+
+async function unsubscribe(username) {
+  await api(`/api/subscriptions/${encodeURIComponent(username)}`, { method: "DELETE" });
+  await loadSubscriptions();
+  loadFeed(false);
+}
