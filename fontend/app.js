@@ -141,3 +141,6 @@ function renderFeed(videos) {
 async function pollNow() {
   $("pollBtn").disabled = true;
   $("pollStatus").textContent = "Checking every subscription for new videos…";
+  $("pollStatus").classList.remove("error");
+  try {
+    const d = await api("/api/poll", { method: "POST" });
