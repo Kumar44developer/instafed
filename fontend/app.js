@@ -69,3 +69,7 @@ async function unsubscribe(username) {
 async function loadSubscriptions() {
   const { subscriptions } = await api("/api/subscriptions");
   $("subsList").innerHTML = subscriptions.length
+    ? subscriptions
+        .map(
+          (s) => `
+      <div class="sub-row">
