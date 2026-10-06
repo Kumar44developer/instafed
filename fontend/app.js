@@ -82,3 +82,7 @@ async function loadSubscriptions() {
         <button class="small" onclick="loadUserVideos('${esc(s.username)}')">Get videos</button>
         <button class="small secondary" onclick="unsubscribe('${esc(s.username)}')">✕</button>
       </div>`
+        )
+        .join("")
+    : `<div class="empty">No subscriptions yet — search a handle above.</div>`;
+}
