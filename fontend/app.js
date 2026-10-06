@@ -75,3 +75,7 @@ async function loadSubscriptions() {
       <div class="sub-row">
         <img src="${esc(s.profile_pic)}" referrerpolicy="no-referrer"
              onerror="this.style.visibility='hidden'"/>
+        <div class="meta">
+          <div class="uname">@${esc(s.username)}</div>
+          <div class="count">${fmt(s.followers)} followers · ${s.cached_videos} cached videos</div>
+        </div>
