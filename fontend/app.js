@@ -94,3 +94,6 @@ async function loadUserVideos(username) {
     const data = await api(
       `/api/subscriptions/${encodeURIComponent(username)}/videos`
     );
+    $("feedStatus").textContent = `${data.count} videos from @${username} (${data.source})`;
+    renderFeed(data.videos);
+    loadSubscriptions();
