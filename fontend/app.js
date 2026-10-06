@@ -130,3 +130,7 @@ function renderFeed(videos) {
           <div class="owner">@${esc(v.username)}</div>
           <div class="caption">${esc(v.caption)}</div>
           <div class="stats">❤️ ${fmt(v.likes)} · 💬 ${fmt(v.comments)}
+            ${v.taken_at ? "· " + esc(v.taken_at.slice(0, 10)) : ""}</div>
+        </div>
+      </div>`
+        )
