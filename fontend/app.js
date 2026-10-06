@@ -79,3 +79,6 @@ async function loadSubscriptions() {
           <div class="uname">@${esc(s.username)}</div>
           <div class="count">${fmt(s.followers)} followers · ${s.cached_videos} cached videos</div>
         </div>
+        <button class="small" onclick="loadUserVideos('${esc(s.username)}')">Get videos</button>
+        <button class="small secondary" onclick="unsubscribe('${esc(s.username)}')">✕</button>
+      </div>`
