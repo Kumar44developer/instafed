@@ -111,3 +111,8 @@ async function loadFeed(refresh) {
     const data = await api(`/api/feed${refresh ? "?refresh=true" : ""}`);
     $("feedStatus").textContent = `${data.count} videos across ${data.subscriptions} subscription(s)`;
     renderFeed(data.videos);
+  } catch (e) {
+    $("feedStatus").textContent = e.message;
+    $("feedStatus").classList.add("error");
+  }
+}
