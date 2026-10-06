@@ -137,3 +137,7 @@ function renderFeed(videos) {
         .join("")
     : `<div class="empty">No videos yet — click “Get videos” on a subscription.</div>`;
 }
+
+async function pollNow() {
+  $("pollBtn").disabled = true;
+  $("pollStatus").textContent = "Checking every subscription for new videos…";
