@@ -55,3 +55,7 @@ async function subscribe(username) {
     });
     await loadSubscriptions();
     doSearch();
+    } catch (e) {
+      alert("Subscribe failed: " + e.message);
+    }
+  }
