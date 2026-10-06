@@ -125,3 +125,8 @@ function renderFeed(videos) {
       <div class="video-card">
         <video controls preload="none" poster="${esc(v.thumbnail_url)}">
           <source src="${esc(v.video_url)}" type="video/mp4"/>
+        </video>
+        <div class="info">
+          <div class="owner">@${esc(v.username)}</div>
+          <div class="caption">${esc(v.caption)}</div>
+          <div class="stats">❤️ ${fmt(v.likes)} · 💬 ${fmt(v.comments)}
