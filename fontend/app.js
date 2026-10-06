@@ -107,3 +107,7 @@ async function loadFeed(refresh) {
   $("feedStatus").textContent = refresh
     ? "Refreshing all subscriptions from Instagram…"
     : "Loading cached feed…";
+  try {
+    const data = await api(`/api/feed${refresh ? "?refresh=true" : ""}`);
+    $("feedStatus").textContent = `${data.count} videos across ${data.subscriptions} subscription(s)`;
+    renderFeed(data.videos);
