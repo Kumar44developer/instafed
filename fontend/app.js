@@ -102,3 +102,8 @@ async function loadUserVideos(username) {
     $("feedStatus").classList.add("error");
   }
 }
+
+async function loadFeed(refresh) {
+  $("feedStatus").textContent = refresh
+    ? "Refreshing all subscriptions from Instagram…"
+    : "Loading cached feed…";
