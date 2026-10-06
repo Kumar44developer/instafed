@@ -144,3 +144,8 @@ async function pollNow() {
   $("pollStatus").classList.remove("error");
   try {
     const d = await api("/api/poll", { method: "POST" });
+    $("pollStatus").textContent =
+      `Poll finished at ${d.ran_at} — ${d.total_new} new video(s)` +
+      (d.total_new ? " 🎉" : "");
+    if (d.total_new) loadFeed(false); // show the fresh ones immediately
+  }
