@@ -134,3 +134,6 @@ function renderFeed(videos) {
         </div>
       </div>`
         )
+        .join("")
+    : `<div class="empty">No videos yet — click “Get videos” on a subscription.</div>`;
+}
