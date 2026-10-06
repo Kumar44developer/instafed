@@ -120,3 +120,8 @@ async function loadFeed(refresh) {
 function renderFeed(videos) {
   $("feedGrid").innerHTML = videos.length
     ? videos
+        .map(
+          (v) => `
+      <div class="video-card">
+        <video controls preload="none" poster="${esc(v.thumbnail_url)}">
+          <source src="${esc(v.video_url)}" type="video/mp4"/>
