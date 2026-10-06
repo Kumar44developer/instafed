@@ -86,3 +86,8 @@ async function loadSubscriptions() {
         .join("")
     : `<div class="empty">No subscriptions yet — search a handle above.</div>`;
 }
+
+async function loadUserVideos(username) {
+  $("feedStatus").textContent = `Fetching every video of @${username}… (large profiles can take a while)`;
+  $("feedStatus").classList.remove("error");
+
