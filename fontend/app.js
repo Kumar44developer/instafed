@@ -73,3 +73,5 @@ async function loadSubscriptions() {
         .map(
           (s) => `
       <div class="sub-row">
+        <img src="${esc(s.profile_pic)}" referrerpolicy="no-referrer"
+             onerror="this.style.visibility='hidden'"/>
