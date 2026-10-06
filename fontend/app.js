@@ -116,3 +116,7 @@ async function loadFeed(refresh) {
     $("feedStatus").classList.add("error");
   }
 }
+
+function renderFeed(videos) {
+  $("feedGrid").innerHTML = videos.length
+    ? videos
