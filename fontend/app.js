@@ -156,3 +156,8 @@ async function pollNow() {
     $("pollBtn").disabled = false;
   }
 }
+
+
+async function loadPollStatus() {
+  try {
+    const s = await api("/api/poll/status");
