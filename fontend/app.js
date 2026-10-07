@@ -175,3 +175,5 @@ $("exactBtn").addEventListener("click", () => {
   const u = $("exactInput").value.trim().replace(/^@/, "");
   if (u) subscribe(u);
 });
+$("exactInput").addEventListener("keydown", (e) => e.key === "Enter" && $("exactBtn").click());
+$("loadFeedBtn").addEventListener("click", () => loadFeed(false));
