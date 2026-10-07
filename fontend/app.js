@@ -152,3 +152,7 @@ async function pollNow() {
  catch (e) {
     $("pollStatus").textContent = e.message;
     $("pollStatus").classList.add("error");
+  } finally {
+    $("pollBtn").disabled = false;
+  }
+}
