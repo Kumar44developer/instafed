@@ -171,3 +171,7 @@ async function loadPollStatus() {
 
 $("searchBtn").addEventListener("click", doSearch);
 $("searchInput").addEventListener("keydown", (e) => e.key === "Enter" && doSearch());
+$("exactBtn").addEventListener("click", () => {
+  const u = $("exactInput").value.trim().replace(/^@/, "");
+  if (u) subscribe(u);
+});
