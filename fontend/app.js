@@ -168,3 +168,6 @@ async function loadPollStatus() {
     /* backend pre-1.1 or transient — ignore */
   }
 }
+
+$("searchBtn").addEventListener("click", doSearch);
+$("searchInput").addEventListener("keydown", (e) => e.key === "Enter" && doSearch());
