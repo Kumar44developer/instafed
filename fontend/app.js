@@ -177,3 +177,5 @@ $("exactBtn").addEventListener("click", () => {
 });
 $("exactInput").addEventListener("keydown", (e) => e.key === "Enter" && $("exactBtn").click());
 $("loadFeedBtn").addEventListener("click", () => loadFeed(false));
+$("refreshFeedBtn").addEventListener("click", () => loadFeed(true));
+$("pollBtn").addEventListener("click", pollNow);
