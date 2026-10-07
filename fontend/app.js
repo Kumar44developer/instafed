@@ -179,3 +179,6 @@ $("exactInput").addEventListener("keydown", (e) => e.key === "Enter" && $("exact
 $("loadFeedBtn").addEventListener("click", () => loadFeed(false));
 $("refreshFeedBtn").addEventListener("click", () => loadFeed(true));
 $("pollBtn").addEventListener("click", pollNow);
+loadSubscriptions();
+loadFeed(false);
+loadPollStatus();
