@@ -164,3 +164,7 @@ async function loadPollStatus() {
     $("pollStatus").textContent = s.ran_at
       ? `Last poll: ${s.ran_at} · ${s.last_total_new} new video(s) found`
       : "No poll yet — the scheduler checks automatically every few minutes.";
+  } catch (_) {
+    /* backend pre-1.1 or transient — ignore */
+  }
+}
