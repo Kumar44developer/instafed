@@ -149,3 +149,6 @@ async function pollNow() {
       (d.total_new ? " 🎉" : "");
     if (d.total_new) loadFeed(false); // show the fresh ones immediately
   }
+ catch (e) {
+    $("pollStatus").textContent = e.message;
+    $("pollStatus").classList.add("error");
