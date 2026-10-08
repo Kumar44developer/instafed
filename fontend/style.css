@@ -34,3 +34,7 @@ main { max-width: 900px; margin: 1.5rem auto; padding: 0 1rem;
 .exact-row span { white-space: nowrap; }
 .exact-row input { flex: 1; min-width: 120px; padding: .4rem .6rem; font-size: .85rem; }
 .exact-row button { padding: .4rem .8rem; font-size: .82rem; }
+input {
+  flex: 1; padding: .65rem .9rem; border: 1px solid var(--border);
+  border-radius: 8px; font-size: 1rem; outline: none;
+}
