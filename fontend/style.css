@@ -19,3 +19,5 @@ body {
 }
 .topbar h1 { font-size: 2rem; }
 .topbar p { opacity: .9; margin-top: .3rem; }
+main { max-width: 900px; margin: 1.5rem auto; padding: 0 1rem;
+       display: grid; gap: 1.25rem; }
