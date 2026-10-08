@@ -61,3 +61,8 @@ button:disabled { opacity: .5; cursor: wait; }
 .user-row .uname { font-weight: 600; }
 .user-row .fname { color: var(--muted); font-size: .85rem;
                    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.subs { display: grid; gap: .6rem; }
+.sub-row {
+  display: flex; align-items: center; gap: .8rem;
+  border: 1px solid var(--border); border-radius: 10px; padding: .6rem .8rem;
+}
