@@ -48,3 +48,5 @@ button:hover { opacity: .9; }
 button.secondary { background: #efefef; color: var(--text); }
 button.small { padding: .4rem .8rem; font-size: .85rem; }
 button:disabled { opacity: .5; cursor: wait; }
+.status { color: var(--muted); font-size: .85rem; margin-top: .6rem; min-height: 1.1em; }
+.status.error { color: #c00; }
