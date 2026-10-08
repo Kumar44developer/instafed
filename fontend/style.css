@@ -58,3 +58,6 @@ button:disabled { opacity: .5; cursor: wait; }
 }
 .user-row img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
 .user-row .meta { flex: 1; min-width: 0; }
+.user-row .uname { font-weight: 600; }
+.user-row .fname { color: var(--muted); font-size: .85rem;
+                   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
