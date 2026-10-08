@@ -66,3 +66,6 @@ button:disabled { opacity: .5; cursor: wait; }
   display: flex; align-items: center; gap: .8rem;
   border: 1px solid var(--border); border-radius: 10px; padding: .6rem .8rem;
 }
+.sub-row img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
+.sub-row .meta { flex: 1; }
+.sub-row .count { color: var(--muted); font-size: .8rem; }
