@@ -69,3 +69,8 @@ button:disabled { opacity: .5; cursor: wait; }
 .sub-row img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
 .sub-row .meta { flex: 1; }
 .sub-row .count { color: var(--muted); font-size: .8rem; }
+.feed-actions { display: flex; gap: .5rem; margin-bottom: .6rem; flex-wrap: wrap; }
+.feed-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: .9rem; margin-top: .8rem;
+}
