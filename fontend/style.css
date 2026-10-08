@@ -17,3 +17,5 @@ body {
   background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
   color: #fff; text-align: center; padding: 2rem 1rem;
 }
+.topbar h1 { font-size: 2rem; }
+.topbar p { opacity: .9; margin-top: .3rem; }
