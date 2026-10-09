@@ -32,3 +32,7 @@ def init_db() -> None:
                 followers     INTEGER DEFAULT 0,
                 subscribed_at TEXT DEFAULT (datetime('now'))
             );
+
+            CREATE TABLE IF NOT EXISTS videos (
+                id            TEXT PRIMARY KEY,   -- shortcode
+                username      TEXT NOT NULL,
