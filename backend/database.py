@@ -48,3 +48,7 @@ def init_db() -> None:
             );
 
             CREATE INDEX IF NOT EXISTS idx_videos_user ON videos(username);
+
+            CREATE TABLE IF NOT EXISTS poll_log (
+                id         INTEGER PRIMARY KEY AUTOINCREMENT,
+                ran_at     TEXT DEFAULT (datetime('now')),
