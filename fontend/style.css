@@ -78,3 +78,6 @@ button:disabled { opacity: .5; cursor: wait; }
   border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
   background: #fff; display: flex; flex-direction: column;
 }
+.video-card video, .video-card img.thumb { width: 100%; aspect-ratio: 4/5;
+  object-fit: cover; background: #000; display: block; }
+.video-card .info { padding: .6rem .7rem; font-size: .8rem; }
