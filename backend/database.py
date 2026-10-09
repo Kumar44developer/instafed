@@ -24,3 +24,7 @@ def _connect() -> sqlite3.Connection:
 def init_db() -> None:
     with _lock, _connect() as conn:
         conn.executescript(
+            """
+            CREATE TABLE IF NOT EXISTS subscriptions (
+                username      TEXT PRIMARY KEY,
+                full_name     TEXT DEFAULT '',
