@@ -39,3 +39,6 @@ def init_db() -> None:
                 video_url     TEXT NOT NULL,
                 thumbnail_url TEXT DEFAULT '',
                 caption       TEXT DEFAULT '',
+                likes         INTEGER DEFAULT 0,
+                comments      INTEGER DEFAULT 0,
+                taken_at      TEXT DEFAULT '',
