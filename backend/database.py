@@ -7,3 +7,8 @@ show when the last automatic check ran and how many new videos it found.
 import sqlite3
 import threading
 from pathlib import Path
+
+
+DB_PATH = Path(__file__).resolve().parent.parent / "instafeed.db"
+
+_lock = threading.Lock()
