@@ -12,3 +12,8 @@ from pathlib import Path
 DB_PATH = Path(__file__).resolve().parent.parent / "instafeed.db"
 
 _lock = threading.Lock()
+
+
+def _connect() -> sqlite3.Connection:
+    conn = sqlite3.connect(DB_PATH, check_same_thread=False)
+    conn.row_factory = sqlite3.Row
