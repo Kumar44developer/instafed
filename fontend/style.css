@@ -74,3 +74,7 @@ button:disabled { opacity: .5; cursor: wait; }
   display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: .9rem; margin-top: .8rem;
 }
+.video-card {
+  border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+  background: #fff; display: flex; flex-direction: column;
+}
