@@ -28,3 +28,7 @@ def init_db() -> None:
             CREATE TABLE IF NOT EXISTS subscriptions (
                 username      TEXT PRIMARY KEY,
                 full_name     TEXT DEFAULT '',
+                profile_pic   TEXT DEFAULT '',
+                followers     INTEGER DEFAULT 0,
+                subscribed_at TEXT DEFAULT (datetime('now'))
+            );
