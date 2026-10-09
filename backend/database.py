@@ -56,3 +56,6 @@ def init_db() -> None:
             );
             """
         )
+
+def add_subscription(username: str, full_name: str = "", profile_pic: str = "",
+                     followers: int = 0) -> dict:
