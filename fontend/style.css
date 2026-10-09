@@ -83,3 +83,5 @@ button:disabled { opacity: .5; cursor: wait; }
 .video-card .info { padding: .6rem .7rem; font-size: .8rem; }
 .video-card .owner { font-weight: 600; margin-bottom: .2rem; }
 .video-card .caption { color: var(--muted); max-height: 3.2em; overflow: hidden; }
+.video-card .stats { margin-top: .35rem; color: var(--muted); font-size: .75rem; }
+.empty { color: var(--muted); font-size: .9rem; padding: .5rem 0; }
