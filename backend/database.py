@@ -52,3 +52,7 @@ def init_db() -> None:
             CREATE TABLE IF NOT EXISTS poll_log (
                 id         INTEGER PRIMARY KEY AUTOINCREMENT,
                 ran_at     TEXT DEFAULT (datetime('now')),
+                total_new  INTEGER DEFAULT 0
+            );
+            """
+        )
