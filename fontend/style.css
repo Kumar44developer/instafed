@@ -81,3 +81,5 @@ button:disabled { opacity: .5; cursor: wait; }
 .video-card video, .video-card img.thumb { width: 100%; aspect-ratio: 4/5;
   object-fit: cover; background: #000; display: block; }
 .video-card .info { padding: .6rem .7rem; font-size: .8rem; }
+.video-card .owner { font-weight: 600; margin-bottom: .2rem; }
+.video-card .caption { color: var(--muted); max-height: 3.2em; overflow: hidden; }
