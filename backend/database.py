@@ -42,3 +42,7 @@ def init_db() -> None:
                 likes         INTEGER DEFAULT 0,
                 comments      INTEGER DEFAULT 0,
                 taken_at      TEXT DEFAULT '',
+                fetched_at    TEXT DEFAULT (datetime('now')),
+                FOREIGN KEY (username) REFERENCES subscriptions(username)
+                    ON DELETE CASCADE
+            );
