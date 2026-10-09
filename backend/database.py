@@ -36,3 +36,6 @@ def init_db() -> None:
             CREATE TABLE IF NOT EXISTS videos (
                 id            TEXT PRIMARY KEY,   -- shortcode
                 username      TEXT NOT NULL,
+                video_url     TEXT NOT NULL,
+                thumbnail_url TEXT DEFAULT '',
+                caption       TEXT DEFAULT '',
