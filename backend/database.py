@@ -46,3 +46,5 @@ def init_db() -> None:
                 FOREIGN KEY (username) REFERENCES subscriptions(username)
                     ON DELETE CASCADE
             );
+
+            CREATE INDEX IF NOT EXISTS idx_videos_user ON videos(username);
