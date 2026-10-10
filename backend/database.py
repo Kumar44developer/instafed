@@ -103,3 +103,6 @@ def upsert_videos(username: str, videos: list[dict]) -> int:
     with _lock, _connect() as conn:
         conn.executemany(
             """INSERT INTO videos (id, username, video_url, thumbnail_url,
+                                   caption, likes, comments, taken_at)
+               VALUES (:id, :username, :video_url, :thumbnail_url,
+                       :caption, :likes, :comments, :taken_at)
