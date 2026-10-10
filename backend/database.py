@@ -130,3 +130,6 @@ def insert_new_videos(username: str, videos: list[dict]) -> int:
         }
         fresh = [v for v in videos if v["id"] not in existing]
         if fresh:
+            conn.executemany(
+                """INSERT INTO videos (id, username, video_url, thumbnail_url,
+                                       caption, likes, comments, taken_at)
