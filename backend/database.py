@@ -59,3 +59,7 @@ def init_db() -> None:
 
 def add_subscription(username: str, full_name: str = "", profile_pic: str = "",
                      followers: int = 0) -> dict:
+    with _lock, _connect() as conn:
+        conn.execute(
+            """INSERT INTO subscriptions (username, full_name, profile_pic, followers)
+               VALUES (?, ?, ?, ?)
