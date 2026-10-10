@@ -76,3 +76,6 @@ def add_subscription(username: str, full_name: str = "", profile_pic: str = "",
 
 def remove_subscription(username: str) -> bool:
     with _lock, _connect() as conn:
+        cur = conn.execute(
+            "DELETE FROM subscriptions WHERE username = ?", (username.lower(),)
+        )
