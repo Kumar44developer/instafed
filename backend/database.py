@@ -138,3 +138,7 @@ def insert_new_videos(username: str, videos: list[dict]) -> int:
                 [{**v, "username": username.lower()} for v in fresh],
             )
     return len(fresh)
+
+def get_videos(username: str | None = None) -> list[dict]:
+    with _lock, _connect() as conn:
+        if username:
