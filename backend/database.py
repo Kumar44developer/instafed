@@ -79,3 +79,5 @@ def remove_subscription(username: str) -> bool:
         cur = conn.execute(
             "DELETE FROM subscriptions WHERE username = ?", (username.lower(),)
         )
+        conn.execute("DELETE FROM videos WHERE username = ?", (username.lower(),))
+        return cur.rowcount > 0
