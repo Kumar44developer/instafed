@@ -73,3 +73,6 @@ def add_subscription(username: str, full_name: str = "", profile_pic: str = "",
             "SELECT * FROM subscriptions WHERE username = ?", (username.lower(),)
         ).fetchone()
     return dict(row)
+
+def remove_subscription(username: str) -> bool:
+    with _lock, _connect() as conn:
