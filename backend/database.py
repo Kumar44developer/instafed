@@ -84,3 +84,7 @@ def remove_subscription(username: str) -> bool:
 
 def list_subscriptions() -> list[dict]:
     with _lock, _connect() as conn:
+        rows = conn.execute(
+            """SELECT s.*, (SELECT COUNT(*) FROM videos v WHERE v.username = s.username)
+                      AS cached_videos
+               FROM subscriptions s ORDER BY subscribed_at DESC"""
