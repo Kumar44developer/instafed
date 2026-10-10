@@ -93,3 +93,5 @@ def list_subscriptions() -> list[dict]:
 
 def is_subscribed(username: str) -> bool:
     with _lock, _connect() as conn:
+        row = conn.execute(
+            "SELECT 1 FROM subscriptions WHERE username = ?", (username.lower(),)
