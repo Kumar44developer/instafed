@@ -100,3 +100,6 @@ def is_subscribed(username: str) -> bool:
 
 def upsert_videos(username: str, videos: list[dict]) -> int:
     """On-demand full fetch: insert new rows, refresh likes/comments on existing."""
+    with _lock, _connect() as conn:
+        conn.executemany(
+            """INSERT INTO videos (id, username, video_url, thumbnail_url,
