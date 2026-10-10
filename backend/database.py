@@ -90,3 +90,6 @@ def list_subscriptions() -> list[dict]:
                FROM subscriptions s ORDER BY subscribed_at DESC"""
         ).fetchall()
     return [dict(r) for r in rows]
+
+def is_subscribed(username: str) -> bool:
+    with _lock, _connect() as conn:
