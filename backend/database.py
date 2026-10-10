@@ -128,3 +128,5 @@ def insert_new_videos(username: str, videos: list[dict]) -> int:
                 "SELECT id FROM videos WHERE username = ?", (username.lower(),)
             ).fetchall()
         }
+        fresh = [v for v in videos if v["id"] not in existing]
+        if fresh:
