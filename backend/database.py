@@ -63,3 +63,7 @@ def add_subscription(username: str, full_name: str = "", profile_pic: str = "",
         conn.execute(
             """INSERT INTO subscriptions (username, full_name, profile_pic, followers)
                VALUES (?, ?, ?, ?)
+               ON CONFLICT(username) DO UPDATE SET
+                   full_name=excluded.full_name,
+                   profile_pic=excluded.profile_pic,
+                   followers=excluded.followers""",
