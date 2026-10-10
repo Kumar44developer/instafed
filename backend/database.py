@@ -109,3 +109,6 @@ def upsert_videos(username: str, videos: list[dict]) -> int:
                ON CONFLICT(id) DO UPDATE SET
                    likes=excluded.likes, comments=excluded.comments,
                    fetched_at=datetime('now')""",
+            [{**v, "username": username.lower()} for v in videos],
+        )
+    return len(videos)
