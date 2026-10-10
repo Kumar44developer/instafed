@@ -88,3 +88,5 @@ def list_subscriptions() -> list[dict]:
             """SELECT s.*, (SELECT COUNT(*) FROM videos v WHERE v.username = s.username)
                       AS cached_videos
                FROM subscriptions s ORDER BY subscribed_at DESC"""
+        ).fetchall()
+    return [dict(r) for r in rows]
