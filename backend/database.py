@@ -121,3 +121,6 @@ def insert_new_videos(username: str, videos: list[dict]) -> int:
     Returns how many new videos were actually inserted. Existing rows are
     left untouched so we never lose previously cached videos.
     """
+    with _lock, _connect() as conn:
+        existing = {
+            r["id"]
