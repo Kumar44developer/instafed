@@ -97,3 +97,6 @@ def is_subscribed(username: str) -> bool:
             "SELECT 1 FROM subscriptions WHERE username = ?", (username.lower(),)
         ).fetchone()
     return row is not None
+
+def upsert_videos(username: str, videos: list[dict]) -> int:
+    """On-demand full fetch: insert new rows, refresh likes/comments on existing."""
