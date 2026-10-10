@@ -112,3 +112,7 @@ def upsert_videos(username: str, videos: list[dict]) -> int:
             [{**v, "username": username.lower()} for v in videos],
         )
     return len(videos)
+
+
+def insert_new_videos(username: str, videos: list[dict]) -> int:
+    """Poll-mode insert: ONLY brand-new videos are stored (dedupe by id).
