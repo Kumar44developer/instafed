@@ -142,3 +142,5 @@ def insert_new_videos(username: str, videos: list[dict]) -> int:
 def get_videos(username: str | None = None) -> list[dict]:
     with _lock, _connect() as conn:
         if username:
+            rows = conn.execute(
+                "SELECT * FROM videos WHERE username = ? ORDER BY taken_at DESC",
