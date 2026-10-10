@@ -81,3 +81,6 @@ def remove_subscription(username: str) -> bool:
         )
         conn.execute("DELETE FROM videos WHERE username = ?", (username.lower(),))
         return cur.rowcount > 0
+
+def list_subscriptions() -> list[dict]:
+    with _lock, _connect() as conn:
