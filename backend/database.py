@@ -69,3 +69,7 @@ def add_subscription(username: str, full_name: str = "", profile_pic: str = "",
                    followers=excluded.followers""",
             (username.lower(), full_name, profile_pic, followers),
         )
+        row = conn.execute(
+            "SELECT * FROM subscriptions WHERE username = ?", (username.lower(),)
+        ).fetchone()
+    return dict(row)
