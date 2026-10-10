@@ -67,3 +67,5 @@ def add_subscription(username: str, full_name: str = "", profile_pic: str = "",
                    full_name=excluded.full_name,
                    profile_pic=excluded.profile_pic,
                    followers=excluded.followers""",
+            (username.lower(), full_name, profile_pic, followers),
+        )
