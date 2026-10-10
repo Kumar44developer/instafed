@@ -124,3 +124,7 @@ def insert_new_videos(username: str, videos: list[dict]) -> int:
     with _lock, _connect() as conn:
         existing = {
             r["id"]
+            for r in conn.execute(
+                "SELECT id FROM videos WHERE username = ?", (username.lower(),)
+            ).fetchall()
+        }
