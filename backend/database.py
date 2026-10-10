@@ -135,3 +135,6 @@ def insert_new_videos(username: str, videos: list[dict]) -> int:
                                        caption, likes, comments, taken_at)
                    VALUES (:id, :username, :video_url, :thumbnail_url,
                            :caption, :likes, :comments, :taken_at)""",
+                [{**v, "username": username.lower()} for v in fresh],
+            )
+    return len(fresh)
