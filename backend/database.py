@@ -116,3 +116,8 @@ def upsert_videos(username: str, videos: list[dict]) -> int:
 
 def insert_new_videos(username: str, videos: list[dict]) -> int:
     """Poll-mode insert: ONLY brand-new videos are stored (dedupe by id).
+
+
+    Returns how many new videos were actually inserted. Existing rows are
+    left untouched so we never lose previously cached videos.
+    """
