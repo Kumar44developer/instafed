@@ -106,3 +106,6 @@ def upsert_videos(username: str, videos: list[dict]) -> int:
                                    caption, likes, comments, taken_at)
                VALUES (:id, :username, :video_url, :thumbnail_url,
                        :caption, :likes, :comments, :taken_at)
+               ON CONFLICT(id) DO UPDATE SET
+                   likes=excluded.likes, comments=excluded.comments,
+                   fetched_at=datetime('now')""",
