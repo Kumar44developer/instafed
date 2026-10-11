@@ -157,3 +157,6 @@ def record_poll(total_new: int) -> None:
         conn.execute(
             "INSERT INTO poll_log (total_new) VALUES (?)", (int(total_new),)
         )
+
+def last_poll() -> dict | None:
+    with _lock, _connect() as conn:
