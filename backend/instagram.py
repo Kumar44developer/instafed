@@ -96,3 +96,5 @@ def _logged_in_search(query: str, limit: int) -> list[dict]:
             resp = requests.get(url, params={"query": query},
                                 headers={"User-Agent": UA, "X-IG-App-ID": APP_ID},
                                 cookies=cookies, timeout=15)
+            if resp.status_code == 200:
+                users = _parse_topsearch(resp, limit)
