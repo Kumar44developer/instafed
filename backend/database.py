@@ -149,3 +149,5 @@ def get_videos(username: str | None = None) -> list[dict]:
         else:
             rows = conn.execute(
                 "SELECT * FROM videos ORDER BY taken_at DESC"
+            ).fetchall()
+    return [dict(r) for r in rows]
