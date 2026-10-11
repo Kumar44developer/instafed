@@ -98,3 +98,5 @@ def _logged_in_search(query: str, limit: int) -> list[dict]:
                                 cookies=cookies, timeout=15)
             if resp.status_code == 200:
                 users = _parse_topsearch(resp, limit)
+                if users:
+                    return users
