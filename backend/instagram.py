@@ -25,3 +25,9 @@ UA = (
 )
 
 APP_ID = "936619743392459"
+
+
+SEARCH_URLS = (
+    "https://www.instagram.com/web/search/topsearch/",
+    "https://www.instagram.com/api/v1/web/search/topsearch/",
+)
