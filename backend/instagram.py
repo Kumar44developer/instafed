@@ -70,3 +70,6 @@ def _anonymous_search(query: str, limit: int) -> list[dict]:
             except requests.RequestException as exc:
                 errors.append(f"{url.split('//')[1]}: {exc}")
                 continue
+            if resp.status_code == 200:
+                users = _parse_topsearch(resp, limit)
+                if users:
