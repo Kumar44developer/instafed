@@ -63,3 +63,5 @@ def _anonymous_search(query: str, limit: int) -> list[dict]:
             s.get("https://www.instagram.com/", timeout=15)  # seed csrftoken cookie
         except requests.RequestException:
             pass
+        for url in SEARCH_URLS:
+            try:
