@@ -73,3 +73,6 @@ def _anonymous_search(query: str, limit: int) -> list[dict]:
             if resp.status_code == 200:
                 users = _parse_topsearch(resp, limit)
                 if users:
+                    return users
+                errors.append(f"{url.split('//')[1]}: empty result")
+            elif resp.status_code == 429:
