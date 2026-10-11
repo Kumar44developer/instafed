@@ -100,3 +100,6 @@ def _logged_in_search(query: str, limit: int) -> list[dict]:
                 users = _parse_topsearch(resp, limit)
                 if users:
                     return users
+            errors.append(f"{url.split('//')[1]}: HTTP {resp.status_code}")
+        except requests.RequestException as exc:
+            errors.append(str(exc))
