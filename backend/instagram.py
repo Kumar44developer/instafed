@@ -51,3 +51,5 @@ def _normalize_user(u: dict) -> dict:
 
 def _parse_topsearch(resp: requests.Response, limit: int) -> list[dict]:
     users = [_normalize_user(item.get("user", {}))
+             for item in (resp.json().get("users") or [])]
+    return [u for u in users if u["username"]][:limit]
