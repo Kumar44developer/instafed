@@ -162,3 +162,5 @@ def last_poll() -> dict | None:
     with _lock, _connect() as conn:
         row = conn.execute(
             "SELECT ran_at, total_new FROM poll_log ORDER BY id DESC LIMIT 1"
+        ).fetchone()
+    return {"ran_at": row["ran_at"], "last_total_new": row["total_new"]} if row else None
