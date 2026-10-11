@@ -151,3 +151,6 @@ def get_videos(username: str | None = None) -> list[dict]:
                 "SELECT * FROM videos ORDER BY taken_at DESC"
             ).fetchall()
     return [dict(r) for r in rows]
+
+def record_poll(total_new: int) -> None:
+    with _lock, _connect() as conn:
