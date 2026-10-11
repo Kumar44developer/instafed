@@ -90,3 +90,5 @@ def _logged_in_search(query: str, limit: int) -> list[dict]:
     """
     errors = []
     ctx = _loader().context
+    cookies = ctx.session.cookies.get_dict()
+    for url in SEARCH_URLS:
