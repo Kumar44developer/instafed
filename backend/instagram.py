@@ -67,3 +67,6 @@ def _anonymous_search(query: str, limit: int) -> list[dict]:
             try:
                 resp = s.get(url, params={"query": query},
                              headers={"X-IG-App-ID": APP_ID}, timeout=15)
+            except requests.RequestException as exc:
+                errors.append(f"{url.split('//')[1]}: {exc}")
+                continue
