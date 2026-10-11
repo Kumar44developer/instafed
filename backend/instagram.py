@@ -43,3 +43,7 @@ def _normalize_user(u: dict) -> dict:
         "username": u.get("username", ""),
         "full_name": u.get("full_name", ""),
         "profile_pic": u.get("profile_pic_url", ""),
+        "followers": u.get("follower_count") or 0,
+        "is_verified": u.get("is_verified", False),
+        "is_private": u.get("is_private", False),
+    }
