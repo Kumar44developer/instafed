@@ -13,3 +13,6 @@ IPs (HTTP 429). If you hit rate limits, set INSTAGRAM_LOGIN / INSTAGRAM_PASSWORD
 env vars so instaloader uses a logged-in session (see README).
 """
 from __future__ import annotations
+
+import os
+from functools import lru_cache
