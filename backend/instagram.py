@@ -35,3 +35,7 @@ SEARCH_URLS = (
 
 class InstagramError(Exception):
     """Raised for any upstream Instagram failure (rate limit, not found, ...)."""
+
+
+def _normalize_user(u: dict) -> dict:
+    """Map an Instagram user JSON blob onto our result schema."""
