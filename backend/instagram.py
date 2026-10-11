@@ -76,3 +76,7 @@ def _anonymous_search(query: str, limit: int) -> list[dict]:
                     return users
                 errors.append(f"{url.split('//')[1]}: empty result")
             elif resp.status_code == 429:
+                errors.append(f"{url.split('//')[1]}: HTTP 429 (rate-limited)")
+            else:
+                errors.append(f"{url.split('//')[1]}: HTTP {resp.status_code}")
+    raise InstagramError(" | ".join(errors))
