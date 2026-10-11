@@ -47,3 +47,7 @@ def _normalize_user(u: dict) -> dict:
         "is_verified": u.get("is_verified", False),
         "is_private": u.get("is_private", False),
     }
+
+
+def _parse_topsearch(resp: requests.Response, limit: int) -> list[dict]:
+    users = [_normalize_user(item.get("user", {}))
