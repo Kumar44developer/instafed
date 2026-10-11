@@ -7,3 +7,8 @@
 - get_profile():   instaloader public profile metadata.
 - get_videos():    instaloader — walks every post of a public profile and
                    keeps only video posts (reels / video posts).
+
+NOTE: Instagram rate-limits anonymous scraping, especially from cloud/datacenter
+IPs (HTTP 429). If you hit rate limits, set INSTAGRAM_LOGIN / INSTAGRAM_PASSWORD
+env vars so instaloader uses a logged-in session (see README).
+"""
