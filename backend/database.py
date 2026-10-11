@@ -160,3 +160,5 @@ def record_poll(total_new: int) -> None:
 
 def last_poll() -> dict | None:
     with _lock, _connect() as conn:
+        row = conn.execute(
+            "SELECT ran_at, total_new FROM poll_log ORDER BY id DESC LIMIT 1"
