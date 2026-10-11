@@ -65,3 +65,5 @@ def _anonymous_search(query: str, limit: int) -> list[dict]:
             pass
         for url in SEARCH_URLS:
             try:
+                resp = s.get(url, params={"query": query},
+                             headers={"X-IG-App-ID": APP_ID}, timeout=15)
