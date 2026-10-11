@@ -31,3 +31,7 @@ SEARCH_URLS = (
     "https://www.instagram.com/web/search/topsearch/",
     "https://www.instagram.com/api/v1/web/search/topsearch/",
 )
+
+
+class InstagramError(Exception):
+    """Raised for any upstream Instagram failure (rate limit, not found, ...)."""
