@@ -83,3 +83,8 @@ def _anonymous_search(query: str, limit: int) -> list[dict]:
 
 def _logged_in_search(query: str, limit: int) -> list[dict]:
     """Strategy 2: instaloader's logged-in session (needs INSTAGRAM_LOGIN env).
+
+
+    Tries the web topsearch with session cookies first, then the GraphQL
+    searchUser query as backup. Only called when login credentials exist.
+    """
