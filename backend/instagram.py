@@ -88,3 +88,5 @@ def _logged_in_search(query: str, limit: int) -> list[dict]:
     Tries the web topsearch with session cookies first, then the GraphQL
     searchUser query as backup. Only called when login credentials exist.
     """
+    errors = []
+    ctx = _loader().context
