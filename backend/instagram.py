@@ -60,3 +60,6 @@ def _anonymous_search(query: str, limit: int) -> list[dict]:
     with requests.Session() as s:
         s.headers.update({"User-Agent": UA})
         try:
+            s.get("https://www.instagram.com/", timeout=15)  # seed csrftoken cookie
+        except requests.RequestException:
+            pass
