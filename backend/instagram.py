@@ -39,3 +39,7 @@ class InstagramError(Exception):
 
 def _normalize_user(u: dict) -> dict:
     """Map an Instagram user JSON blob onto our result schema."""
+    return {
+        "username": u.get("username", ""),
+        "full_name": u.get("full_name", ""),
+        "profile_pic": u.get("profile_pic_url", ""),
