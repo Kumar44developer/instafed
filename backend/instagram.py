@@ -80,3 +80,6 @@ def _anonymous_search(query: str, limit: int) -> list[dict]:
             else:
                 errors.append(f"{url.split('//')[1]}: HTTP {resp.status_code}")
     raise InstagramError(" | ".join(errors))
+
+def _logged_in_search(query: str, limit: int) -> list[dict]:
+    """Strategy 2: instaloader's logged-in session (needs INSTAGRAM_LOGIN env).
