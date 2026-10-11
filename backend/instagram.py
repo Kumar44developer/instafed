@@ -53,3 +53,7 @@ def _parse_topsearch(resp: requests.Response, limit: int) -> list[dict]:
     users = [_normalize_user(item.get("user", {}))
              for item in (resp.json().get("users") or [])]
     return [u for u in users if u["username"]][:limit]
+
+def _anonymous_search(query: str, limit: int) -> list[dict]:
+    """Strategy 1: anonymous web topsearch with a fresh session."""
+    errors = []
