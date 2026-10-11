@@ -57,3 +57,6 @@ def _parse_topsearch(resp: requests.Response, limit: int) -> list[dict]:
 def _anonymous_search(query: str, limit: int) -> list[dict]:
     """Strategy 1: anonymous web topsearch with a fresh session."""
     errors = []
+    with requests.Session() as s:
+        s.headers.update({"User-Agent": UA})
+        try:
