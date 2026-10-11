@@ -92,3 +92,7 @@ def _logged_in_search(query: str, limit: int) -> list[dict]:
     ctx = _loader().context
     cookies = ctx.session.cookies.get_dict()
     for url in SEARCH_URLS:
+        try:
+            resp = requests.get(url, params={"query": query},
+                                headers={"User-Agent": UA, "X-IG-App-ID": APP_ID},
+                                cookies=cookies, timeout=15)
