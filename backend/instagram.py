@@ -174,3 +174,5 @@ def _loader():
     L = instaloader.Instaloader(
         quiet=True,
         download_pictures=False,
+        download_videos=False,
+        download_video_thumbnails=False,
