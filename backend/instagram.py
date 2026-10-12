@@ -117,3 +117,8 @@ def _logged_in_search(query: str, limit: int) -> list[dict]:
     except Exception as exc:  # instaloader raises QueryReturned* on failure
         errors.append(f"graphql: {exc}")
     raise InstagramError(" | ".join(errors))
+
+
+
+def search_users(query: str, limit: int = 15) -> list[dict]:
+    """Search Instagram handles by (partial) username — resilient by design.
