@@ -122,3 +122,8 @@ def _logged_in_search(query: str, limit: int) -> list[dict]:
 
 def search_users(query: str, limit: int = 15) -> list[dict]:
     """Search Instagram handles by (partial) username — resilient by design.
+
+    Order: anonymous topsearch → logged-in search (if credentials set) →
+    exact-handle match via public profile. Raises an actionable InstagramError
+    only when every strategy is blocked.
+    """
