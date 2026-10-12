@@ -180,3 +180,5 @@ def _loader():
         download_comments=False,
         save_metadata=False,
     )
+    login = os.environ.get("INSTAGRAM_LOGIN")
+    password = os.environ.get("INSTAGRAM_PASSWORD")
