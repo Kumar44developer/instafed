@@ -129,3 +129,5 @@ def search_users(query: str, limit: int = 15) -> list[dict]:
     """
     query = (query or "").strip().lstrip("@")
     if not query:
+        return []
+    errors: list[str] = []
