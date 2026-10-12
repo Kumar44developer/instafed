@@ -166,3 +166,7 @@ def search_users(query: str, limit: int = 15) -> list[dict]:
             "vars (see README) for a logged-in session."
         )
     raise InstagramError("search failed: " + " | ".join(errors[-2:]))
+
+@lru_cache(maxsize=1)
+def _loader():
+    import instaloader 
