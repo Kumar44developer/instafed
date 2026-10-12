@@ -127,3 +127,5 @@ def search_users(query: str, limit: int = 15) -> list[dict]:
     exact-handle match via public profile. Raises an actionable InstagramError
     only when every strategy is blocked.
     """
+    query = (query or "").strip().lstrip("@")
+    if not query:
