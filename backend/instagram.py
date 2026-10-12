@@ -182,3 +182,6 @@ def _loader():
     )
     login = os.environ.get("INSTAGRAM_LOGIN")
     password = os.environ.get("INSTAGRAM_PASSWORD")
+    if login and password:
+        try:
+            L.login(login, password)
