@@ -185,3 +185,6 @@ def _loader():
     if login and password:
         try:
             L.login(login, password)
+        except Exception as exc:  # bad credentials / checkpoint required
+            raise InstagramError(f"Instagram login failed: {exc}") from exc
+    return L
