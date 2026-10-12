@@ -139,3 +139,7 @@ def search_users(query: str, limit: int = 15) -> list[dict]:
             return users
     except InstagramError as exc:
         errors.append(str(exc))
+
+
+    if os.environ.get("INSTAGRAM_LOGIN"):
+        try:
