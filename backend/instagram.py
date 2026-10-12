@@ -143,3 +143,5 @@ def search_users(query: str, limit: int = 15) -> list[dict]:
 
     if os.environ.get("INSTAGRAM_LOGIN"):
         try:
+          users = _logged_in_search(query, limit)
+            if users:
