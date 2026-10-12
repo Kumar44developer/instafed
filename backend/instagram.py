@@ -148,3 +148,8 @@ def search_users(query: str, limit: int = 15) -> list[dict]:
                 return users
         except InstagramError as exc:
             errors.append(str(exc))
+
+    try:
+        p = get_profile(query)
+        return [_normalize_user({
+            "username": p["username"], "full_name": p["full_name"],
