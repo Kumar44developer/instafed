@@ -114,3 +114,6 @@ def _logged_in_search(query: str, limit: int) -> list[dict]:
         if users:
             return users
         errors.append("graphql: empty result")
+    except Exception as exc:  # instaloader raises QueryReturned* on failure
+        errors.append(f"graphql: {exc}")
+    raise InstagramError(" | ".join(errors))
