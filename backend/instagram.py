@@ -131,3 +131,8 @@ def search_users(query: str, limit: int = 15) -> list[dict]:
     if not query:
         return []
     errors: list[str] = []
+
+
+    try:
+        users = _anonymous_search(query, limit)
+        if users:
