@@ -192,3 +192,6 @@ def _loader():
 def get_profile(username: str) -> dict:
     """Public profile metadata for one username."""
     import instaloader
+
+    username = username.strip().lstrip("@").lower()
+    try:      
