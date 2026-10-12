@@ -145,3 +145,6 @@ def search_users(query: str, limit: int = 15) -> list[dict]:
         try:
           users = _logged_in_search(query, limit)
             if users:
+                return users
+        except InstagramError as exc:
+            errors.append(str(exc))
