@@ -170,3 +170,7 @@ def search_users(query: str, limit: int = 15) -> list[dict]:
 @lru_cache(maxsize=1)
 def _loader():
     import instaloader 
+
+    L = instaloader.Instaloader(
+        quiet=True,
+        download_pictures=False,
