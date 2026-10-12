@@ -163,3 +163,6 @@ def search_users(query: str, limit: int = 15) -> list[dict]:
         raise InstagramError(
             "Instagram is rate-limiting requests from this network. Wait a few "
             "minutes and retry, or set INSTAGRAM_LOGIN / INSTAGRAM_PASSWORD env "
+            "vars (see README) for a logged-in session."
+        )
+    raise InstagramError("search failed: " + " | ".join(errors[-2:]))
