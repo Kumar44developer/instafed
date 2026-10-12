@@ -111,3 +111,6 @@ def _logged_in_search(query: str, limit: int) -> list[dict]:
         raw = (data.get("data") or {}).get("users") or {}
         users = [_normalize_user(item.get("user", {})) for item in raw.get("users") or []]
         users = [u for u in users if u["username"]][:limit]
+        if users:
+            return users
+        errors.append("graphql: empty result")
