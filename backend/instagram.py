@@ -195,3 +195,5 @@ def get_profile(username: str) -> dict:
 
     username = username.strip().lstrip("@").lower()
     try:      
+        p = instaloader.Profile.from_username(_loader().context, username)
+    except instaloader.exceptions.ProfileNotExistsException as exc:
