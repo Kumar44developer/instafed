@@ -158,3 +158,6 @@ def search_users(query: str, limit: int = 15) -> list[dict]:
         })]
     except InstagramError as exc:
         errors.append(str(exc))
+
+    if any("429" in e or "rate-limit" in e.lower() for e in errors):
+        raise InstagramError(
