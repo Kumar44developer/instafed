@@ -153,3 +153,6 @@ def search_users(query: str, limit: int = 15) -> list[dict]:
         p = get_profile(query)
         return [_normalize_user({
             "username": p["username"], "full_name": p["full_name"],
+            "profile_pic_url": p["profile_pic"], "follower_count": p["followers"],
+            "is_verified": p["is_verified"], "is_private": p["is_private"],
+        })]
