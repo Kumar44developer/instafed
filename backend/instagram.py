@@ -188,3 +188,7 @@ def _loader():
         except Exception as exc:  # bad credentials / checkpoint required
             raise InstagramError(f"Instagram login failed: {exc}") from exc
     return L
+
+def get_profile(username: str) -> dict:
+    """Public profile metadata for one username."""
+    import instaloader
