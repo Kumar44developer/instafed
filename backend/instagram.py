@@ -103,3 +103,8 @@ def _logged_in_search(query: str, limit: int) -> list[dict]:
             errors.append(f"{url.split('//')[1]}: HTTP {resp.status_code}")
         except requests.RequestException as exc:
             errors.append(str(exc))
+    try:
+        data = ctx.graphql_query(
+            "d5d47b4c1fb2ca08e4511d724c75fa2f",  # searchUser query hash
+            {"search_surface": "top_search_page", "query": query, "count": limit},
+        )
