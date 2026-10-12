@@ -156,3 +156,5 @@ def search_users(query: str, limit: int = 15) -> list[dict]:
             "profile_pic_url": p["profile_pic"], "follower_count": p["followers"],
             "is_verified": p["is_verified"], "is_private": p["is_private"],
         })]
+    except InstagramError as exc:
+        errors.append(str(exc))
