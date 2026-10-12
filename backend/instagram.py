@@ -197,3 +197,5 @@ def get_profile(username: str) -> dict:
     try:      
         p = instaloader.Profile.from_username(_loader().context, username)
     except instaloader.exceptions.ProfileNotExistsException as exc:
+        raise InstagramError(f"@{username} does not exist") from exc
+    except instaloader.exceptions.TooManyRequestsException as exc:
