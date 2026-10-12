@@ -108,3 +108,6 @@ def _logged_in_search(query: str, limit: int) -> list[dict]:
             "d5d47b4c1fb2ca08e4511d724c75fa2f",  # searchUser query hash
             {"search_surface": "top_search_page", "query": query, "count": limit},
         )
+        raw = (data.get("data") or {}).get("users") or {}
+        users = [_normalize_user(item.get("user", {})) for item in raw.get("users") or []]
+        users = [u for u in users if u["username"]][:limit]
