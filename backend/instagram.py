@@ -246,3 +246,6 @@ def get_videos(username: str, limit: int | None = None) -> list[dict]:
     try:
         for post in profile.get_posts():
             if not post.is_video:
+                continue
+            videos.append(
+                {
