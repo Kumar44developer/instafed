@@ -241,3 +241,8 @@ def get_videos(username: str, limit: int | None = None) -> list[dict]:
 
     if profile.is_private and not profile.followed_by_viewer:
         raise InstagramError(f"@{username} is a private account")
+
+    videos: list[dict] = []
+    try:
+        for post in profile.get_posts():
+            if not post.is_video:
