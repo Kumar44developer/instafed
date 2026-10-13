@@ -234,3 +234,6 @@ def get_videos(username: str, limit: int | None = None) -> list[dict]:
         raise InstagramError(
             "Instagram rate-limited the request (429). Wait a few minutes or "
             "configure INSTAGRAM_LOGIN / INSTAGRAM_PASSWORD."
+        ) from exc
+    except Exception as exc:
+        raise InstagramError(f"could not load @{username}: {exc}") from exc
