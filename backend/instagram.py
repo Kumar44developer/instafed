@@ -209,3 +209,6 @@ def get_profile(username: str) -> dict:
         "username": p.username,
         "full_name": p.full_name,
         "profile_pic": p.profile_pic_url,
+        "followers": p.followers,
+        "following": p.followees,
+        "posts": p.mediacount,
