@@ -199,3 +199,6 @@ def get_profile(username: str) -> dict:
     except instaloader.exceptions.ProfileNotExistsException as exc:
         raise InstagramError(f"@{username} does not exist") from exc
     except instaloader.exceptions.TooManyRequestsException as exc:
+        raise InstagramError(
+            "Instagram rate-limited the request (429). Wait a few minutes or "
+            "configure INSTAGRAM_LOGIN / INSTAGRAM_PASSWORD."
