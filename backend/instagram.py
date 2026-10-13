@@ -237,3 +237,7 @@ def get_videos(username: str, limit: int | None = None) -> list[dict]:
         ) from exc
     except Exception as exc:
         raise InstagramError(f"could not load @{username}: {exc}") from exc
+
+
+    if profile.is_private and not profile.followed_by_viewer:
+        raise InstagramError(f"@{username} is a private account")
