@@ -256,3 +256,8 @@ def get_videos(username: str, limit: int | None = None) -> list[dict]:
                     "likes": post.likes,
                     "comments": post.comments,
                     "taken_at": post.date_utc.isoformat(),
+                    "permalink": f"https://www.instagram.com/reel/{post.shortcode}/",
+                    "views": post.video_view_count or 0,
+                    "duration": post.video_duration or 0,
+                }
+            )
