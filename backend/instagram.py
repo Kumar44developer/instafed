@@ -212,3 +212,7 @@ def get_profile(username: str) -> dict:
         "followers": p.followers,
         "following": p.followees,
         "posts": p.mediacount,
+        "is_private": p.is_private,
+        "is_verified": p.is_verified,
+        "bio": p.biography,
+    }
