@@ -261,3 +261,5 @@ def get_videos(username: str, limit: int | None = None) -> list[dict]:
                     "duration": post.video_duration or 0,
                 }
             )
+            if limit is not None and len(videos) >= limit:
+                break
