@@ -227,3 +227,5 @@ def get_videos(username: str, limit: int | None = None) -> list[dict]:
 
     username = username.strip().lstrip("@").lower()
     try:
+        profile = instaloader.Profile.from_username(_loader().context, username)
+    except instaloader.exceptions.ProfileNotExistsException as exc:
