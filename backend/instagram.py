@@ -263,3 +263,5 @@ def get_videos(username: str, limit: int | None = None) -> list[dict]:
             )
             if limit is not None and len(videos) >= limit:
                 break
+    except instaloader.exceptions.TooManyRequestsException as exc:
+        raise InstagramError(
