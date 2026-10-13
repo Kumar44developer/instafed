@@ -253,3 +253,6 @@ def get_videos(username: str, limit: int | None = None) -> list[dict]:
                     "video_url": post.video_url,
                     "thumbnail_url": post.url,
                     "caption": (post.caption or "")[:500],
+                    "likes": post.likes,
+                    "comments": post.comments,
+                    "taken_at": post.date_utc.isoformat(),
