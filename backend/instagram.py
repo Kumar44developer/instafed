@@ -223,3 +223,7 @@ def get_videos(username: str, limit: int | None = None) -> list[dict]:
     limit=None means ALL videos. Pagination follows Instagram's own
     cursor so large profiles stream in batches.
     """
+    import instaloader
+
+    username = username.strip().lstrip("@").lower()
+    try:
