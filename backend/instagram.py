@@ -219,3 +219,7 @@ def get_profile(username: str) -> dict:
 
 def get_videos(username: str, limit: int | None = None) -> list[dict]:
     """Every video (reels + video posts) of a public profile.
+
+    limit=None means ALL videos. Pagination follows Instagram's own
+    cursor so large profiles stream in batches.
+    """
