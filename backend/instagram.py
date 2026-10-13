@@ -249,3 +249,7 @@ def get_videos(username: str, limit: int | None = None) -> list[dict]:
                 continue
             videos.append(
                 {
+                    "id": post.shortcode,
+                    "video_url": post.video_url,
+                    "thumbnail_url": post.url,
+                    "caption": (post.caption or "")[:500],
