@@ -229,3 +229,5 @@ def get_videos(username: str, limit: int | None = None) -> list[dict]:
     try:
         profile = instaloader.Profile.from_username(_loader().context, username)
     except instaloader.exceptions.ProfileNotExistsException as exc:
+        raise InstagramError(f"@{username} does not exist") from exc
+    except instaloader.exceptions.TooManyRequestsException as exc:
