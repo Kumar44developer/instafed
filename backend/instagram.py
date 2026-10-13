@@ -205,3 +205,7 @@ def get_profile(username: str) -> dict:
         ) from exc
     except Exception as exc:
         raise InstagramError(f"could not load @{username}: {exc}") from exc
+    return {
+        "username": p.username,
+        "full_name": p.full_name,
+        "profile_pic": p.profile_pic_url,
