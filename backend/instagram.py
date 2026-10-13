@@ -216,3 +216,6 @@ def get_profile(username: str) -> dict:
         "is_verified": p.is_verified,
         "bio": p.biography,
     }
+
+def get_videos(username: str, limit: int | None = None) -> list[dict]:
+    """Every video (reels + video posts) of a public profile.
