@@ -5,3 +5,5 @@ Workflow:
   2. POST /api/subscribe {username}         → subscribe to a handle
   3. GET  /api/subscriptions/{user}/videos  → fetch EVERY video of that user
   4. GET  /api/feed                         → videos of all subscribed users
+  5. POST /api/poll                         → check subs for NEW videos (dedupe)
+     + background scheduler polls automatically every POLL_INTERVAL_MINUTES
