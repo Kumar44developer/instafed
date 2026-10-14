@@ -74,3 +74,6 @@ def subscribe(body: SubscribeRequest):
 @app.get("/api/subscriptions")
 def subscriptions():
     return {"subscriptions": db.list_subscriptions()}
+
+@app.delete("/api/subscriptions/{username}")
+def unsubscribe(username: str):
