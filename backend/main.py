@@ -77,3 +77,4 @@ def subscriptions():
 
 @app.delete("/api/subscriptions/{username}")
 def unsubscribe(username: str):
+    if not db.remove_subscription(username):
