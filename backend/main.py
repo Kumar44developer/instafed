@@ -55,3 +55,6 @@ def search(q: str = Query(..., min_length=1)):
     for r in results:
         r["subscribed"] = db.is_subscribed(r["username"])
     return {"query": q, "count": len(results), "results": results}
+
+@app.post("/api/subscribe", status_code=201)
+def subscribe(body: SubscribeRequest):
