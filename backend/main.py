@@ -78,3 +78,5 @@ def subscriptions():
 @app.delete("/api/subscriptions/{username}")
 def unsubscribe(username: str):
     if not db.remove_subscription(username):
+        raise HTTPException(status_code=404, detail=f"not subscribed to @{username}")
+    return {"message": f"unsubscribed from @{username}"}
