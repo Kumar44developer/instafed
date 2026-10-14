@@ -52,3 +52,6 @@ def search(q: str = Query(..., min_length=1)):
         results = ig.search_users(q)
     except ig.InstagramError as exc:
         raise HTTPException(status_code=502, detail=str(exc)) from exc
+    for r in results:
+        r["subscribed"] = db.is_subscribed(r["username"])
+    return {"query": q, "count": len(results), "results": results}
