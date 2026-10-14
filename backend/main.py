@@ -7,3 +7,7 @@ Workflow:
   4. GET  /api/feed                         → videos of all subscribed users
   5. POST /api/poll                         → check subs for NEW videos (dedupe)
      + background scheduler polls automatically every POLL_INTERVAL_MINUTES
+
+
+Run:  uvicorn backend.main:app --reload --port 8000
+"""
