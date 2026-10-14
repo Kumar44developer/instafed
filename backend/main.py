@@ -34,3 +34,6 @@ app = FastAPI(title="Instafeed", version="1.1.0")
 app.add_middleware(
     CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"]
 )
+
+@app.on_event("startup")
+def _startup() -> None:
