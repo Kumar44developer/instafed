@@ -44,3 +44,7 @@ def _startup() -> None:
 
 class SubscribeRequest(BaseModel):
     username: str = Field(..., min_length=1, max_length=30)
+
+@app.get("/api/search")
+def search(q: str = Query(..., min_length=1)):
+    """Step 1 — search Instagram handles by username."""
