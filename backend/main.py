@@ -69,3 +69,8 @@ def subscribe(body: SubscribeRequest):
         profile["profile_pic"], profile["followers"],
     )
     return {"message": f"subscribed to @{profile['username']}", "subscription": sub}
+
+
+@app.get("/api/subscriptions")
+def subscriptions():
+    return {"subscriptions": db.list_subscriptions()}
