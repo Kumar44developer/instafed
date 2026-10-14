@@ -61,3 +61,5 @@ def subscribe(body: SubscribeRequest):
     """Step 1.2 — subscribe to a username (stores it locally)."""
     username = body.username.strip().lstrip("@").lower()
     try:
+        profile = ig.get_profile(username)
+    except ig.InstagramError as exc:
