@@ -58,3 +58,6 @@ def search(q: str = Query(..., min_length=1)):
 
 @app.post("/api/subscribe", status_code=201)
 def subscribe(body: SubscribeRequest):
+    """Step 1.2 — subscribe to a username (stores it locally)."""
+    username = body.username.strip().lstrip("@").lower()
+    try:
