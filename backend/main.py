@@ -68,3 +68,4 @@ def subscribe(body: SubscribeRequest):
         profile["username"], profile["full_name"],
         profile["profile_pic"], profile["followers"],
     )
+    return {"message": f"subscribed to @{profile['username']}", "subscription": sub}
