@@ -50,3 +50,5 @@ def search(q: str = Query(..., min_length=1)):
     """Step 1 — search Instagram handles by username."""
     try:
         results = ig.search_users(q)
+    except ig.InstagramError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
