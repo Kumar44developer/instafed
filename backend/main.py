@@ -63,3 +63,4 @@ def subscribe(body: SubscribeRequest):
     try:
         profile = ig.get_profile(username)
     except ig.InstagramError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
