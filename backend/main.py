@@ -29,3 +29,8 @@ from . import instagram as ig
 from . import scheduler
 
 FRONTEND_DIR = Path(__file__).resolve().parent.parent / "frontend"
+
+app = FastAPI(title="Instafeed", version="1.1.0")
+app.add_middleware(
+    CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"]
+)
