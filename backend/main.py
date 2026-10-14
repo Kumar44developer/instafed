@@ -39,3 +39,8 @@ app.add_middleware(
 def _startup() -> None:
     db.init_db()
     scheduler.start_if_enabled()
+
+
+
+class SubscribeRequest(BaseModel):
+    username: str = Field(..., min_length=1, max_length=30)
