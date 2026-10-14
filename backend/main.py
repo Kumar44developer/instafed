@@ -27,3 +27,5 @@ from pydantic import BaseModel, Field
 from . import database as db
 from . import instagram as ig
 from . import scheduler
+
+FRONTEND_DIR = Path(__file__).resolve().parent.parent / "frontend"
