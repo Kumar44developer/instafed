@@ -7,3 +7,8 @@ The core loop mirrors a classic cron job:
         fetch their LATEST videos only (default 10)      # fast, rate-limit friendly
         insert only the ones we don't already have       # dedupe by video id
     frontend just reads the DB, newest first             # nothing new -> nothing changes
+
+`run_poll()` is also exposed as POST /api/poll so it can be triggered by
+Vercel Cron / a system cron job instead of (or in addition to) the
+in-process scheduler thread.
+"""
