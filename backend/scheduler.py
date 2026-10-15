@@ -24,3 +24,6 @@ from datetime import datetime, timezone
 
 from . import database as db
 from . import instagram as ig
+
+
+log = logging.getLogger("instafeed.scheduler")
