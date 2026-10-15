@@ -39,3 +39,7 @@ def run_poll(limit: int | None = None) -> dict:
         {"ran_at": "...", "total_new": 3,
          "per_user": {"cristiano": {"checked": 10, "new": 2}, ...}}
     """
+
+    limit = limit or POLL_LATEST_LIMIT
+    subs = db.list_subscriptions()
+    per_user: dict = {}
