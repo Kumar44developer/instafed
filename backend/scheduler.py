@@ -57,3 +57,8 @@ def run_poll(limit: int | None = None) -> dict:
         if new:
             log.info("poll @%s: %d new video(s)", username, new)
     db.record_poll(total_new)
+    return {
+        "ran_at": datetime.now(timezone.utc).isoformat(),
+        "total_new": total_new,
+        "per_user": per_user,
+    }
