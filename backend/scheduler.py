@@ -92,3 +92,7 @@ class PollScheduler:
             except Exception as exc:  # never let one bad cycle kill the loop
                 log.warning("poll cycle failed: %s", exc)
             self._stop.wait(self.interval_seconds)
+
+
+def start_if_enabled() -> None:
+    """Start the in-process scheduler unless INSTAFEED_SCHEDULER=0."""
