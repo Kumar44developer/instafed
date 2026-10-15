@@ -54,3 +54,5 @@ def run_poll(limit: int | None = None) -> dict:
         new = db.insert_new_videos(username, videos)
         per_user[username] = {"checked": len(videos), "new": new}
         total_new += new
+        if new:
+            log.info("poll @%s: %d new video(s)", username, new)
