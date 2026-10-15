@@ -80,3 +80,5 @@ class PollScheduler:
         self._thread = threading.Thread(
             target=self._loop, name="instafeed-poll", daemon=True
         )
+        self._thread.start()
+        log.info("poll scheduler started (every %d min)", self.interval_seconds // 60)
