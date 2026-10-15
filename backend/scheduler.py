@@ -51,3 +51,6 @@ def run_poll(limit: int | None = None) -> dict:
         except ig.InstagramError as exc:
             per_user[username] = {"error": str(exc)}
             continue
+        new = db.insert_new_videos(username, videos)
+        per_user[username] = {"checked": len(videos), "new": new}
+        total_new += new
