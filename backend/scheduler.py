@@ -66,3 +66,7 @@ def run_poll(limit: int | None = None) -> dict:
 
 class PollScheduler:
     """Daemon thread that runs `run_poll` every interval minutes."""
+
+
+    def __init__(self, interval_minutes: int = POLL_INTERVAL_MINUTES):
+        self.interval_seconds = max(1, interval_minutes) * 60
