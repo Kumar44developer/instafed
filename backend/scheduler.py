@@ -43,3 +43,6 @@ def run_poll(limit: int | None = None) -> dict:
     limit = limit or POLL_LATEST_LIMIT
     subs = db.list_subscriptions()
     per_user: dict = {}
+    total_new = 0
+    for s in subs:
+        username = s["username"]
