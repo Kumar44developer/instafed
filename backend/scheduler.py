@@ -89,3 +89,6 @@ class PollScheduler:
             try:
                 summary = run_poll()
                 log.info("poll cycle done: %d new video(s)", summary["total_new"])
+            except Exception as exc:  # never let one bad cycle kill the loop
+                log.warning("poll cycle failed: %s", exc)
+            self._stop.wait(self.interval_seconds)
