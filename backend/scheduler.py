@@ -72,3 +72,8 @@ class PollScheduler:
         self.interval_seconds = max(1, interval_minutes) * 60
         self._stop = threading.Event()
         self._thread: threading.Thread | None = None
+
+
+    def start(self) -> None:
+        if self._thread and self._thread.is_alive():
+            return
