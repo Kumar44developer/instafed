@@ -77,3 +77,6 @@ class PollScheduler:
     def start(self) -> None:
         if self._thread and self._thread.is_alive():
             return
+        self._thread = threading.Thread(
+            target=self._loop, name="instafeed-poll", daemon=True
+        )
