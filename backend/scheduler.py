@@ -62,3 +62,7 @@ def run_poll(limit: int | None = None) -> dict:
         "total_new": total_new,
         "per_user": per_user,
     }
+
+
+class PollScheduler:
+    """Daemon thread that runs `run_poll` every interval minutes."""
