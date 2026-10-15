@@ -56,3 +56,4 @@ def run_poll(limit: int | None = None) -> dict:
         total_new += new
         if new:
             log.info("poll @%s: %d new video(s)", username, new)
+    db.record_poll(total_new)
