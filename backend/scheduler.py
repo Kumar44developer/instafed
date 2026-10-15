@@ -96,3 +96,5 @@ class PollScheduler:
 
 def start_if_enabled() -> None:
     """Start the in-process scheduler unless INSTAFEED_SCHEDULER=0."""
+    if os.environ.get("INSTAFEED_SCHEDULER", "1") == "1":
+        _scheduler.start()
