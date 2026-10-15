@@ -49,3 +49,5 @@ def run_poll(limit: int | None = None) -> dict:
         try:
             videos = ig.get_videos(username, limit=limit)
         except ig.InstagramError as exc:
+            per_user[username] = {"error": str(exc)}
+            continue
