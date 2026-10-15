@@ -70,3 +70,5 @@ class PollScheduler:
 
     def __init__(self, interval_minutes: int = POLL_INTERVAL_MINUTES):
         self.interval_seconds = max(1, interval_minutes) * 60
+        self._stop = threading.Event()
+        self._thread: threading.Thread | None = None
