@@ -31,3 +31,6 @@ log = logging.getLogger("instafeed.scheduler")
 
 POLL_INTERVAL_MINUTES = int(os.environ.get("POLL_INTERVAL_MINUTES", "15"))
 POLL_LATEST_LIMIT = int(os.environ.get("POLL_LATEST_LIMIT", "10"))
+
+def run_poll(limit: int | None = None) -> dict:
+    """One poll cycle: fetch latest videos per subscription, keep only new ones.
