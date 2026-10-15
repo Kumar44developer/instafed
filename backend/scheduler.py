@@ -27,3 +27,7 @@ from . import instagram as ig
 
 
 log = logging.getLogger("instafeed.scheduler")
+
+
+POLL_INTERVAL_MINUTES = int(os.environ.get("POLL_INTERVAL_MINUTES", "15"))
+POLL_LATEST_LIMIT = int(os.environ.get("POLL_LATEST_LIMIT", "10"))
