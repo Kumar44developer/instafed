@@ -20,3 +20,7 @@ import os
 import threading
 import time
 from datetime import datetime, timezone
+
+
+from . import database as db
+from . import instagram as ig
