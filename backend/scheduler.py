@@ -46,3 +46,6 @@ def run_poll(limit: int | None = None) -> dict:
     total_new = 0
     for s in subs:
         username = s["username"]
+        try:
+            videos = ig.get_videos(username, limit=limit)
+        except ig.InstagramError as exc:
