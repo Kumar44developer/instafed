@@ -82,3 +82,7 @@ class PollScheduler:
         )
         self._thread.start()
         log.info("poll scheduler started (every %d min)", self.interval_seconds // 60)
+
+
+    def _loop(self) -> None:
+        while not self._stop.is_set():
