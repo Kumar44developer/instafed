@@ -86,3 +86,6 @@ class PollScheduler:
 
     def _loop(self) -> None:
         while not self._stop.is_set():
+            try:
+                summary = run_poll()
+                log.info("poll cycle done: %d new video(s)", summary["total_new"])
