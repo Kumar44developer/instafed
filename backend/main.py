@@ -137,3 +137,4 @@ def poll(limit: int | None = Query(None, ge=1)):
 
 @app.get("/api/poll/status")
 def poll_status():
+    """Last automatic/manual poll run: when, and how many new videos."""
