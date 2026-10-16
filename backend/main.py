@@ -98,3 +98,5 @@ def user_videos(username: str, refresh: bool = False,
         )
     cached = db.get_videos(username)
     if cached and not refresh:
+        return {"username": username, "count": len(cached),
+                "source": "cache", "videos": cached}
