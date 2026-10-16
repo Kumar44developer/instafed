@@ -103,3 +103,6 @@ def user_videos(username: str, refresh: bool = False,
     try:
         videos = ig.get_videos(username, limit=limit)
     except ig.InstagramError as exc:
+        if cached:
+            return {"username": username, "count": len(cached), "source": "cache",
+                    "warning": str(exc), "videos": cached}
