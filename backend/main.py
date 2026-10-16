@@ -123,3 +123,7 @@ def feed(refresh: bool = False):
                 continue  # keep old cache for that user
     videos = db.get_videos()
     return {"count": len(videos), "subscriptions": len(subs), "videos": videos}
+
+@app.post("/api/poll")
+def poll(limit: int | None = Query(None, ge=1)):
+    """Check every subscription for NEW videos and store only the new ones.
