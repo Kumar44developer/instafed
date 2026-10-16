@@ -132,3 +132,4 @@ def poll(limit: int | None = Query(None, ge=1)):
     every POLL_INTERVAL_MINUTES — expose it so Vercel Cron / system cron
     can trigger it too.
     """
+    return scheduler.run_poll(limit=limit)
