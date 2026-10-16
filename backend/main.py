@@ -143,3 +143,4 @@ def poll_status():
 
 @app.get("/api/health")
 def health():
+    return {"status": "ok", "subscriptions": len(db.list_subscriptions())}
