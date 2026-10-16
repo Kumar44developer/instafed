@@ -127,3 +127,8 @@ def feed(refresh: bool = False):
 @app.post("/api/poll")
 def poll(limit: int | None = Query(None, ge=1)):
     """Check every subscription for NEW videos and store only the new ones.
+
+    This is the same routine the background scheduler runs automatically
+    every POLL_INTERVAL_MINUTES — expose it so Vercel Cron / system cron
+    can trigger it too.
+    """
