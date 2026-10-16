@@ -83,3 +83,5 @@ def unsubscribe(username: str):
 
 @app.get("/api/subscriptions/{username}/videos")
 def user_videos(username: str, refresh: bool = False,
+                limit: int | None = Query(None, ge=1)):
+    """Step 1.3 — get EACH AND EVERY video of a subscribed username.
