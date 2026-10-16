@@ -133,3 +133,7 @@ def poll(limit: int | None = Query(None, ge=1)):
     can trigger it too.
     """
     return scheduler.run_poll(limit=limit)
+
+
+@app.get("/api/poll/status")
+def poll_status():
