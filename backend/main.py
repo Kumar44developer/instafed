@@ -120,3 +120,6 @@ def feed(refresh: bool = False):
             try:
                 db.upsert_videos(s["username"], ig.get_videos(s["username"]))
             except ig.InstagramError:
+                continue  # keep old cache for that user
+    videos = db.get_videos()
+    return {"count": len(videos), "subscriptions": len(subs), "videos": videos}
