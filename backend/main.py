@@ -110,3 +110,6 @@ def user_videos(username: str, refresh: bool = False,
     db.upsert_videos(username, videos)
     return {"username": username, "count": len(videos),
             "source": "live", "videos": videos}
+
+@app.get("/api/feed")
+def feed(refresh: bool = False):
