@@ -100,3 +100,5 @@ def user_videos(username: str, refresh: bool = False,
     if cached and not refresh:
         return {"username": username, "count": len(cached),
                 "source": "cache", "videos": cached}
+    try:
+        videos = ig.get_videos(username, limit=limit)
