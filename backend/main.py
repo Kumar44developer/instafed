@@ -85,3 +85,7 @@ def unsubscribe(username: str):
 def user_videos(username: str, refresh: bool = False,
                 limit: int | None = Query(None, ge=1)):
     """Step 1.3 — get EACH AND EVERY video of a subscribed username.
+
+    Videos are cached in SQLite; pass ?refresh=true to re-fetch from
+    Instagram. ?limit=N caps the fetch (default: all videos).
+    """
