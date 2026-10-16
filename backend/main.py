@@ -92,3 +92,5 @@ def user_videos(username: str, refresh: bool = False,
 
     username = username.strip().lstrip("@").lower()
     if not db.is_subscribed(username):
+        raise HTTPException(
+            status_code=409,
