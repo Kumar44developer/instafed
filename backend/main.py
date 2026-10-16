@@ -96,3 +96,5 @@ def user_videos(username: str, refresh: bool = False,
             status_code=409,
             detail=f"subscribe to @{username} first (POST /api/subscribe)",
         )
+    cached = db.get_videos(username)
+    if cached and not refresh:
