@@ -107,3 +107,6 @@ def user_videos(username: str, refresh: bool = False,
             return {"username": username, "count": len(cached), "source": "cache",
                     "warning": str(exc), "videos": cached}
         raise HTTPException(status_code=502, detail=str(exc)) from exc
+    db.upsert_videos(username, videos)
+    return {"username": username, "count": len(videos),
+            "source": "live", "videos": videos}
