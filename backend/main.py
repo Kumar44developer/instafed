@@ -94,3 +94,5 @@ def user_videos(username: str, refresh: bool = False,
     if not db.is_subscribed(username):
         raise HTTPException(
             status_code=409,
+            detail=f"subscribe to @{username} first (POST /api/subscribe)",
+        )
