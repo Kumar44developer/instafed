@@ -113,3 +113,5 @@ def user_videos(username: str, refresh: bool = False,
 
 @app.get("/api/feed")
 def feed(refresh: bool = False):
+    """Combined video feed across every subscribed username, newest first."""
+    subs = db.list_subscriptions()
