@@ -117,3 +117,6 @@ def feed(refresh: bool = False):
     subs = db.list_subscriptions()
     if refresh:
         for s in subs:
+            try:
+                db.upsert_videos(s["username"], ig.get_videos(s["username"]))
+            except ig.InstagramError:
