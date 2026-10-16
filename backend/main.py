@@ -140,3 +140,6 @@ def poll_status():
     """Last automatic/manual poll run: when, and how many new videos."""
     info = db.last_poll()
     return info if info else {"ran_at": None, "last_total_new": None}
+
+@app.get("/api/health")
+def health():
