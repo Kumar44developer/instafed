@@ -89,3 +89,6 @@ def user_videos(username: str, refresh: bool = False,
     Videos are cached in SQLite; pass ?refresh=true to re-fetch from
     Instagram. ?limit=N caps the fetch (default: all videos).
     """
+
+    username = username.strip().lstrip("@").lower()
+    if not db.is_subscribed(username):
