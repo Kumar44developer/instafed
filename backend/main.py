@@ -115,3 +115,5 @@ def user_videos(username: str, refresh: bool = False,
 def feed(refresh: bool = False):
     """Combined video feed across every subscribed username, newest first."""
     subs = db.list_subscriptions()
+    if refresh:
+        for s in subs:
