@@ -5,3 +5,5 @@ Usage:
 
 Equivalent to POST /api/poll. Exits 0 on success.
 """
+import os
+import sys
