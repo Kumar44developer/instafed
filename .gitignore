@@ -1,3 +1,5 @@
 __pycache__/
 *.pyc
 instafeed.db
+instafeed.db-*
+.env
