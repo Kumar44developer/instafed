@@ -20,3 +20,7 @@ from backend.scheduler import run_poll
 db.init_db()
 limit = int(sys.argv[1]) if len(sys.argv) > 1 else None
 summary = run_poll(limit=limit)
+print(
+    f"polled {len(summary['per_user'])} subscription(s) "
+    f"at {summary['ran_at']}; {summary['total_new']} new video(s)"
+)
