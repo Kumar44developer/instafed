@@ -3,3 +3,5 @@ __pycache__/
 instafeed.db
 instafeed.db-*
 .env
+session-*
+.venv/
