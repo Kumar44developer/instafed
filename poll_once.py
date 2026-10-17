@@ -7,3 +7,7 @@ Equivalent to POST /api/poll. Exits 0 on success.
 """
 import os
 import sys
+
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+os.chdir(os.path.join(os.path.dirname(__file__), ".."))
