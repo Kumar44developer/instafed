@@ -11,3 +11,7 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 os.chdir(os.path.join(os.path.dirname(__file__), ".."))
+
+
+from backend import database as db
+from backend.scheduler import run_poll
