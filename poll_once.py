@@ -15,3 +15,8 @@ os.chdir(os.path.join(os.path.dirname(__file__), ".."))
 
 from backend import database as db
 from backend.scheduler import run_poll
+
+
+db.init_db()
+limit = int(sys.argv[1]) if len(sys.argv) > 1 else None
+summary = run_poll(limit=limit)
