@@ -53,9 +53,9 @@ def main() -> int:
         )
         videos = ig.get_provider().get_videos(handle, limit=12)
         db.upsert_videos(user["id"], handle, videos)
-        print(f"  ✓ @{handle}: {len(videos)} video(s)")
+        print(f"  + @{handle}: {len(videos)} video(s)")
 
-    print(f"\nSeeded @{username} — sign in with '{username}' / '{password}'")
+    print(f"\nSeeded @{username} - sign in with '{username}' / '{password}'")
     return 0
 
 

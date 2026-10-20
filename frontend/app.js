@@ -494,6 +494,12 @@
     $("iLikes").textContent = fmt(stats.total_likes);
     $("iComments").textContent = fmt(stats.total_comments);
 
+    // The compact stat row at the top of the feed view.
+    $("statVideos").textContent = fmt(stats.videos);
+    $("statSubs").textContent = fmt(stats.subscriptions);
+    $("statMarks").textContent = fmt(stats.bookmarks);
+    $("statLikes").textContent = fmt(stats.total_likes);
+
     const top = stats.top_creators || [];
     const max = top.reduce((acc, row) => Math.max(acc, row.videos), 0) || 1;
     $("topCreators").innerHTML = top.length
@@ -604,6 +610,8 @@
       const svg = button.querySelector("svg");
       if (svg) svg.setAttribute("fill", active ? "none" : "currentColor");
       await loadStats();
+      if (active && state.view === "bookmarks") await loadBookmarks();
+      if (active && state.bookmarkedOnly) await loadFeed();
     } catch (error) {
       toast(error.message, "error");
     }
