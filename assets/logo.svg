@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Instafeed logo">
+  <defs>
+    <linearGradient id="ig" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f9ce34"/>
+      <stop offset="50%" stop-color="#ee2a7b"/>
+      <stop offset="100%" stop-color="#6228d7"/>
+    </linearGradient>
+    <linearGradient id="ig2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.65"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="url(#ig)"/>
+  <rect x="24" y="26" width="80" height="80" rx="24" fill="none" stroke="url(#ig2)" stroke-width="7"/>
+  <circle cx="64" cy="66" r="19" fill="none" stroke="#fff" stroke-width="7"/>
+  <circle cx="88" cy="42" r="6" fill="#fff"/>
+  <path d="M56 59.5l19 6.5-19 6.5z" fill="#fff"/>
+</svg>

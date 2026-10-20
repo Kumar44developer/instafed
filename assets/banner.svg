@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-label="Instafeed — your Instagram video feed, distilled">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#08080d"/>
+      <stop offset="55%" stop-color="#140a1d"/>
+      <stop offset="100%" stop-color="#0b1026"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f9ce34"/>
+      <stop offset="50%" stop-color="#ee2a7b"/>
+      <stop offset="100%" stop-color="#6228d7"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.18" cy="0.1" r="0.6">
+      <stop offset="0%" stop-color="#ee2a7b" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#ee2a7b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.85" cy="0.85" r="0.6">
+      <stop offset="0%" stop-color="#6228d7" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#6228d7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow3" cx="0.75" cy="0.08" r="0.45">
+      <stop offset="0%" stop-color="#f9ce34" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#f9ce34" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="420" fill="url(#bg)"/>
+  <rect width="1200" height="420" fill="url(#glow1)"/>
+  <rect width="1200" height="420" fill="url(#glow2)"/>
+  <rect width="1200" height="420" fill="url(#glow3)"/>
+
+  <!-- mark -->
+  <g transform="translate(80, 128)">
+    <rect width="104" height="104" rx="26" fill="url(#brand)"/>
+    <rect x="19" y="21" width="66" height="66" rx="20" fill="none" stroke="#ffffff" stroke-opacity="0.9" stroke-width="6"/>
+    <circle cx="52" cy="54" r="16" fill="none" stroke="#ffffff" stroke-width="6"/>
+    <circle cx="71" cy="35" r="5" fill="#ffffff"/>
+    <path d="M46 48.5l15 5.5-15 5.5z" fill="#ffffff"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="220" y="180" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="66" font-weight="800" fill="#ffffff" letter-spacing="-2">Instafeed</text>
+  <text x="222" y="222" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="25" font-weight="500" fill="#c9c9d8">Your Instagram video feed, distilled.</text>
+
+  <!-- feature pills -->
+  <g font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#ffffff">
+    <g transform="translate(80, 268)">
+      <rect width="182" height="42" rx="21" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.18"/>
+      <text x="91" y="27" text-anchor="middle">Subscribe &amp; sync</text>
+    </g>
+    <g transform="translate(276, 268)">
+      <rect width="176" height="42" rx="21" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.18"/>
+      <text x="88" y="27" text-anchor="middle">Search &amp; filter</text>
+    </g>
+    <g transform="translate(466, 268)">
+      <rect width="188" height="42" rx="21" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.18"/>
+      <text x="94" y="27" text-anchor="middle">Bookmark reels</text>
+    </g>
+    <g transform="translate(668, 268)">
+      <rect width="182" height="42" rx="21" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.18"/>
+      <text x="91" y="27" text-anchor="middle">Auto-polling</text>
+    </g>
+    <g transform="translate(864, 268)">
+      <rect width="212" height="42" rx="21" fill="url(#brand)" fill-opacity="0.9"/>
+      <text x="106" y="27" text-anchor="middle">FastAPI + SQLite</text>
+    </g>
+  </g>
+
+  <!-- decorative cards -->
+  <g opacity="0.9">
+    <g transform="translate(1010, 96)">
+      <rect width="132" height="184" rx="16" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+      <rect x="12" y="14" width="108" height="108" rx="10" fill="url(#brand)" fill-opacity="0.55"/>
+      <rect x="12" y="134" width="86" height="8" rx="4" fill="#ffffff" fill-opacity="0.35"/>
+      <rect x="12" y="150" width="58" height="8" rx="4" fill="#ffffff" fill-opacity="0.2"/>
+    </g>
+    <g transform="translate(946, 130)">
+      <rect width="132" height="184" rx="16" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+      <rect x="12" y="14" width="108" height="108" rx="10" fill="#6228d7" fill-opacity="0.55"/>
+      <rect x="12" y="134" width="74" height="8" rx="4" fill="#ffffff" fill-opacity="0.35"/>
+      <rect x="12" y="150" width="96" height="8" rx="4" fill="#ffffff" fill-opacity="0.2"/>
+    </g>
+    <g transform="translate(882, 164)">
+      <rect width="132" height="184" rx="16" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+      <rect x="12" y="14" width="108" height="108" rx="10" fill="#ee2a7b" fill-opacity="0.55"/>
+      <rect x="12" y="134" width="92" height="8" rx="4" fill="#ffffff" fill-opacity="0.35"/>
+      <rect x="12" y="150" width="48" height="8" rx="4" fill="#ffffff" fill-opacity="0.2"/>
+    </g>
+  </g>
+</svg>

@@ -1,7 +1,49 @@
+# --- Python ---------------------------------------------------------------
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Virtual environments --------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+
+# --- Testing & tooling -----------------------------------------------------
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# --- Secrets & local state -------------------------------------------------
+.env
+.env.*
+!.env.example
+*.secret
 instafeed.db
 instafeed.db-*
-.env
+instafeed.db-shm
+instafeed.db-wal
 session-*
-.venv/
+cookies.txt
+
+# --- Instagram session files ----------------------------------------------
+cookies.txt
+.idx
+id.json
+session.json
+
+# --- Editors & OS ----------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

@@ -1,0 +1,18 @@
+# Normalise line endings so the repo behaves the same on every platform.
+* text=auto eol=lf
+
+*.py   text diff=python
+*.js   text diff=javascript
+*.css  text diff=css
+*.html text diff=html
+*.md   text diff=markdown
+*.yml  text
+*.yaml text
+*.toml text
+*.svg  text
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.db  binary

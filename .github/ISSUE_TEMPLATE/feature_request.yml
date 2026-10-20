@@ -1,0 +1,51 @@
+name: Feature request
+description: Suggest an idea or improvement for Instafeed
+labels: ["enhancement", "needs triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe the situation you are in, not the solution you have in mind.
+      placeholder: Every morning I spend twenty minutes scrolling to find the four reels I actually wanted…
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      placeholder: A "Smart collections" view that auto-files reels by hashtag…
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you have considered
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of the product?
+      options:
+        - Feed & playback
+        - Discovery & subscriptions
+        - Bookmarks & collections
+        - Insights & reporting
+        - Authentication & accounts
+        - Scheduler & automation
+        - Developer experience
+        - Something else
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-flight checks
+      options:
+        - label: I searched existing issues and this has not been requested yet
+          required: true

@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master, develop]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  INSTAFEED_DEMO: "1"
+  INSTAFEED_SCHEDULER: "0"
+  INSTAFEED_SECRET_KEY: "ci-secret-key"
+
+jobs:
+  quality:
+    name: Lint & type sanity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install ruff
+
+      - name: Ruff lint
+        run: ruff check backend tests
+
+      - name: Ruff format check
+        run: ruff format --check backend tests
+
+  test:
+    name: Tests (py${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      - name: Run tests
+        run: pytest --cov=backend --cov-report=xml --cov-report=term-missing
+
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-${{ matrix.python-version }}
+          path: coverage.xml
+        continue-on-error: true
+
+  docker:
+    name: Docker image builds
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t instafeed:ci .
+      - name: Smoke-test the container
+        run: |
+          docker run -d --name instafeed-ci -p 8000:8000 instafeed:ci
+          for i in $(seq 1 30); do
+            if curl -fsS http://localhost:8000/api/health; then break; fi
+            sleep 2
+          done
+          curl -fsS http://localhost:8000/api/health
+          docker rm -f instafeed-ci

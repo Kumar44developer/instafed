@@ -1,0 +1,28 @@
+services:
+  instafeed:
+    build: .
+    image: instafeed:latest
+    container_name: instafeed
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      INSTAFEED_SECRET_KEY: "${INSTAFEED_SECRET_KEY:-}"
+      INSTAGRAM_LOGIN: "${INSTAGRAM_LOGIN:-}"
+      INSTAGRAM_PASSWORD: "${INSTAGRAM_PASSWORD:-}"
+      INSTAFEED_SCHEDULER: "1"
+      POLL_INTERVAL_MINUTES: "${POLL_INTERVAL_MINUTES:-15}"
+      INSTAFEED_CORS_ORIGINS: "${INSTAFEED_CORS_ORIGINS:-http://localhost:8000}"
+      # Set to 1 to run fully offline with sample data.
+      INSTAFEED_DEMO: "${INSTAFEED_DEMO:-0}"
+    volumes:
+      - instafeed-data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  instafeed-data:
